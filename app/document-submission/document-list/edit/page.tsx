@@ -12,7 +12,7 @@ import {
   ChevronDownIcon,
 } from "lucide-react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import {
   documentSchema,
   DocumentSchemaType,
@@ -78,7 +78,7 @@ const documentTypeOptions = [
   { value: "other", label: "Other" },
 ];
 
-export default function EditDocument() {
+function EditDocumentContent() {
   const params = useParams();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -621,5 +621,25 @@ export default function EditDocument() {
         </Card>
       </div>
     </div>
+  );
+}
+
+export default function EditDocument() {
+  return (
+    <Suspense
+      fallback={
+        <div className="container mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <Card>
+              <CardContent className="py-8">
+                <div className="text-center">Loading document...</div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      }
+    >
+      <EditDocumentContent />
+    </Suspense>
   );
 }
