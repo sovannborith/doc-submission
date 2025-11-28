@@ -381,8 +381,8 @@ export default function DocumentListTable() {
   }, [urgencySearch, uniqueUrgencies]);
 
   return (
-    <div className="flex flex-col w-full h-full overflow-hidden">
-      <div className="flex items-center justify-between gap-4 mb-4 shrink-0">
+    <div className="flex flex-col w-full min-h-0 max-w-full">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 shrink-0 w-full">
         <Link
           href="/document-submission/document-list/create"
           className={buttonVariants()}
@@ -390,8 +390,8 @@ export default function DocumentListTable() {
           <Plus className=" h-4 w-4" />
           New Document
         </Link>
-        <div className="flex items-center gap-2">
-          <div className="flex relative max-w-[300px]">
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="flex relative w-full sm:max-w-[300px]">
             <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder="Filter by document title or number..."
@@ -790,9 +790,9 @@ export default function DocumentListTable() {
           </Sheet>
         </div>
       </div>
-      <div className="flex-1 min-h-0 overflow-auto">
-        <div className="rounded-md border w-full">
-          <Table className="w-full">
+      <div className="flex-1 min-h-0 overflow-auto w-full">
+        <div className="rounded-md border w-full overflow-x-auto max-w-full">
+          <Table className="min-w-[800px] w-full">
             <TableHeader>
               <TableRow>
                 <TableHead
