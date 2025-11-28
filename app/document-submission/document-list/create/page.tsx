@@ -2,14 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { format } from "date-fns";
-import {
-  CalendarIcon,
-  CheckCircleIcon,
-  PlusIcon,
-  TrashIcon,
-  ArrowLeft,
-} from "lucide-react";
+import { CheckCircleIcon, PlusIcon, TrashIcon, ArrowLeft } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -47,14 +40,20 @@ import { toast } from "sonner";
 import Link from "next/link";
 // Sample BU/FU options - replace with your actual data source
 const buFuOptions = [
-  { value: "bu-001", label: "Business Unit 001" },
-  { value: "bu-002", label: "Business Unit 002" },
-  { value: "bu-003", label: "Business Unit 003" },
-  { value: "fu-001", label: "Functional Unit 001" },
-  { value: "fu-002", label: "Functional Unit 002" },
-  { value: "fu-003", label: "Functional Unit 003" },
-  { value: "bu-004", label: "Business Unit 004" },
-  { value: "fu-004", label: "Functional Unit 004" },
+  { value: "fbit", label: "FBIT" },
+  { value: "fceg", label: "FCEG" },
+  { value: "fhrf", label: "FHRF" },
+  { value: "fsco", label: "FSCO" },
+  { value: "TSS", label: "TSS" },
+  { value: "chs", label: "CHS" },
+  { value: "cps", label: "CPS" },
+  { value: "sts", label: "STS" },
+  { value: "dcc", label: "DCC" },
+  { value: "fcfa", label: "FCFA" },
+  { value: "fcmt", label: "FCMT" },
+  { value: "fprm", label: "FPRM" },
+  { value: "edc", label: "EDC" },
+  { value: "fdcm", label: "FDCM" },
 ];
 
 // Sample urgency options
@@ -86,7 +85,7 @@ export default function CreateDocument() {
     return {
       requestorName: "Sovannborith",
       buFu: "bu-001", // FIXED: Use a valid value from buFuOptions
-      extension: "",
+      extension: "203",
       documents: [
         {
           urgency: "urgent", // FIXED: Changed from "Urgent" to "urgent"
