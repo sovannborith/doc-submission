@@ -38,6 +38,16 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { cn } from "@/lib/utils";
 import {
   documentSchema,
@@ -89,6 +99,7 @@ const documentTypeOptions = [
 export default function CreateDocument() {
   const router = useRouter();
   const [buFuSearch, setBuFuSearch] = useState("");
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false);
 
   function initializeForm(): DocumentSchemaType {
     return {
@@ -499,13 +510,42 @@ export default function CreateDocument() {
                     <RotateCcw className="h-4 w-4 text-primary" />
                     Reset
                   </Button>
-                  <Button
-                    type="submit"
-                    className="cursor-pointer flex items-center gap-2"
+                  <AlertDialog
+                    open={showConfirmDialog}
+                    onOpenChange={setShowConfirmDialog}
                   >
-                    <Send className="h-4 w-4" />
-                    Submit
-                  </Button>
+                    <Button
+                      type="button"
+                      className="cursor-pointer flex items-center gap-2"
+                      onClick={() => setShowConfirmDialog(true)}
+                    >
+                      <Send className="h-4 w-4" />
+                      Submit
+                    </Button>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>Confirm Submission</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          Are you sure you want to submit this document? Once
+                          submitted, it will be sent for approval and cannot be
+                          edited.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction
+                          onClick={() => {
+                            form.handleSubmit(onSubmit)();
+                            setShowConfirmDialog(false);
+                          }}
+                          className="cursor-pointer flex items-center gap-2"
+                        >
+                          <Send className="h-4 w-4" />
+                          Confirm Submit
+                        </AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
                 </div>
               </form>
             </Form>

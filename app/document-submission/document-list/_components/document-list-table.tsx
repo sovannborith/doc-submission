@@ -382,25 +382,25 @@ export default function DocumentListTable() {
 
   return (
     <div className="flex flex-col w-full min-h-0 max-w-full">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 shrink-0 w-full">
+      <div className="flex flex-row gap-2 mb-4 w-full items-center justify-between">
         <Link
           href="/document-submission/document-list/create"
           className={buttonVariants()}
         >
-          <Plus className=" h-4 w-4" />
+          <Plus className="h-4 w-4" />
           New Document
         </Link>
-        <div className="flex items-center gap-2 w-full sm:w-auto">
-          <div className="flex relative w-full sm:max-w-[300px]">
+        <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-row relative">
             <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder="Filter by document title or number..."
               value={documentTitleFilter}
+              className="pl-9 w-full sm:max-w-[300px]"
               onChange={(e) => {
                 setDocumentTitleFilter(e.target.value);
                 setCurrentPage(1);
               }}
-              className="pl-9"
             />
           </div>
           <Sheet open={isFilterSheetOpen} onOpenChange={setIsFilterSheetOpen}>

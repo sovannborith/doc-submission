@@ -382,7 +382,7 @@ export default function PendingApprovalTable() {
 
   return (
     <div className="flex flex-col w-full min-h-0 max-w-full">
-      <div className="flex flex-col sm:flex-row justify-end gap-2 mb-4 shrink-0 w-full">
+      <div className="flex flex-row justify-end gap-2 mb-4 shrink-0 w-full">
         <div className="flex relative w-full sm:max-w-[300px]">
           <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input

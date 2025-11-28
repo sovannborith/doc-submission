@@ -13,12 +13,13 @@ export type DocumentListItem = {
   documentUrl?: string;
   documentStatus?: string;
   documentStage?: string;
+  history?: string;
 };
 
 export const documentList: DocumentListItem[] = [
   {
     id: 0,
-    requestorName: "John Doe",
+    requestorName: "Chi Kuth",
     buFu: "Finance",
     extension: "1234",
     submitDate: new Date("2025-01-15"),
