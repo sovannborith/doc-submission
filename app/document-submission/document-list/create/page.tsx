@@ -2,7 +2,17 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CheckCircleIcon, PlusIcon, TrashIcon, ArrowLeft } from "lucide-react";
+import {
+  CheckCircleIcon,
+  PlusIcon,
+  TrashIcon,
+  ArrowLeft,
+  CheckIcon,
+  SearchIcon,
+  RotateCcw,
+  Send,
+} from "lucide-react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,12 +34,10 @@ import {
 } from "@/components/ui/card";
 
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import {
   documentSchema,
@@ -80,6 +88,7 @@ const documentTypeOptions = [
 
 export default function CreateDocument() {
   const router = useRouter();
+  const [buFuSearch, setBuFuSearch] = useState("");
 
   function initializeForm(): DocumentSchemaType {
     return {
@@ -107,6 +116,12 @@ export default function CreateDocument() {
   });
 
   const documents = form.watch("documents");
+
+  const filteredBuFuOptions = buFuOptions.filter(
+    (option) =>
+      option.label.toLowerCase().includes(buFuSearch.toLowerCase()) ||
+      option.value.toLowerCase().includes(buFuSearch.toLowerCase())
+  );
 
   const onSubmit = (values: DocumentSchemaType) => {
     console.log("Form submitted:", values);
@@ -210,26 +225,60 @@ export default function CreateDocument() {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>BU/FU *</FormLabel>
-                          <Select
-                            onValueChange={field.onChange}
-                            value={field.value}
-                          >
-                            <FormControl>
-                              <SelectTrigger className="w-full max-w-450-[450px]">
-                                <SelectValue placeholder="Select BU/FU" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              {buFuOptions.map((option) => (
-                                <SelectItem
-                                  key={option.value}
-                                  value={option.value}
+                          <Popover>
+                            <PopoverTrigger asChild>
+                              <FormControl>
+                                <Button
+                                  variant="outline"
+                                  role="combobox"
+                                  className="w-full justify-between cursor-pointer"
                                 >
-                                  {option.label}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
+                                  {field.value
+                                    ? buFuOptions.find(
+                                        (option) => option.value === field.value
+                                      )?.label || "Select BU/FU"
+                                    : "Select BU/FU"}
+                                  <SearchIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                </Button>
+                              </FormControl>
+                            </PopoverTrigger>
+                            <PopoverContent className="w-[300px] p-0">
+                              <div className="p-2">
+                                <Input
+                                  placeholder="Search BU/FU..."
+                                  value={buFuSearch}
+                                  onChange={(e) =>
+                                    setBuFuSearch(e.target.value)
+                                  }
+                                  className="mb-2"
+                                />
+                                <div className="max-h-[200px] overflow-auto">
+                                  {filteredBuFuOptions.length === 0 ? (
+                                    <div className="py-6 text-center text-sm text-muted-foreground">
+                                      No BU/FU found.
+                                    </div>
+                                  ) : (
+                                    filteredBuFuOptions.map((option) => (
+                                      <Button
+                                        key={option.value}
+                                        variant="ghost"
+                                        className="w-full justify-start font-normal cursor-pointer"
+                                        onClick={() => {
+                                          field.onChange(option.value);
+                                          setBuFuSearch("");
+                                        }}
+                                      >
+                                        {field.value === option.value && (
+                                          <CheckIcon className="mr-2 h-4 w-4" />
+                                        )}
+                                        {option.label}
+                                      </Button>
+                                    ))
+                                  )}
+                                </div>
+                              </div>
+                            </PopoverContent>
+                          </Popover>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -444,12 +493,17 @@ export default function CreateDocument() {
                   <Button
                     type="button"
                     variant="outline"
-                    className="cursor-pointer"
+                    className="cursor-pointer flex items-center gap-2"
                     onClick={() => form.reset()}
                   >
+                    <RotateCcw className="h-4 w-4 text-primary" />
                     Reset
                   </Button>
-                  <Button type="submit" className="cursor-pointer">
+                  <Button
+                    type="submit"
+                    className="cursor-pointer flex items-center gap-2"
+                  >
+                    <Send className="h-4 w-4" />
                     Submit
                   </Button>
                 </div>

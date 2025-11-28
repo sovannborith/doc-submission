@@ -47,12 +47,12 @@ export default function DocumentSubmissionSidebar() {
                 <SidebarMenuButton
                   asChild
                   tooltip={fn.description}
-                  className="rounded-xl"
+                  className="rounded-xl hover:rounded-sm focus:rounded-sm focus-visible:rounded-sm"
                   isActive={pathname === fn.href}
                 >
                   <Link
                     href={fn.href}
-                    className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium"
+                    className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:rounded-sm focus:rounded-sm focus-visible:rounded-sm"
                     onClick={handleLinkClick}
                   >
                     <fn.icon className="h-4 w-4 text-primary" />
