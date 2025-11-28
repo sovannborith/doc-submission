@@ -34,11 +34,11 @@ export default function DocumentSubmissionSidebar() {
       <SidebarHeader className="flex h-[100px] items-center justify-between gap-4">
         <div className="flex w-full h-full items-center justify-between  gap-1">
           <SidebarLogo />
-          <SidebarTrigger className="rounded-lg cursor-pointer text-primary" />
+          <SidebarTrigger className="flex md:hidden rounded-lg cursor-pointer text-primary" />
         </div>
       </SidebarHeader>
       <SidebarSeparator className="-ml-px -mt-px" />
-      <SidebarContent>
+      <SidebarContent className="pt-0">
         <SidebarGroup>
           {/* <SidebarGroupLabel>Workflows</SidebarGroupLabel> */}
           <SidebarMenu>
@@ -64,17 +64,6 @@ export default function DocumentSubmissionSidebar() {
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-      {/* <SidebarSeparator />
-      <SidebarFooter className="flex flex-col gap-1 px-5 py-3">
-        <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-          Support
-        </p>
-        <SidebarMenuButton asChild size="default" variant="outline">
-          <Link href="/document-submission/help" className="w-full">
-            Request Assistance
-          </Link>
-        </SidebarMenuButton>
-      </SidebarFooter> */}
     </Sidebar>
   );
 }

@@ -9,7 +9,7 @@ export default function DocumentList() {
             All Documents
           </h1>
         </div>
-        <div className="flex-1 min-h-0 w-full max-w-full">
+        <div className="w-full max-w-full">
           <DocumentListTable />
         </div>
       </div>

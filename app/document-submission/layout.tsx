@@ -42,9 +42,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         >
           <SidebarProvider>
             <DocumentSubmissionSidebar />
-            <div className="flex flex-col flex-1 relative min-h-svh w-full max-w-full overflow-x-hidden">
+            <div className="flex flex-1 flex-col relative min-h-svh w-full max-w-full overflow-hidden">
               <Header />
-              <main className="flex flex-1 flex-col w-full max-w-full overflow-y-auto overflow-x-hidden min-h-0">
+              <main className="flex flex-1 mt-[100px] flex-col w-full max-w-full min-h-0">
                 {children}
               </main>
               <AppFooter />

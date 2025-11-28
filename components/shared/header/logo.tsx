@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Logo() {
   return (
-    <div className="flex items-center justify-center md:hidden">
+    <div className="flex items-center justify-center">
       <Link href="/">
         <Image src={logo} height={40} alt="Logo" className="object-contain" />
       </Link>

@@ -30,7 +30,7 @@ export const documentList: DocumentListItem[] = [
     documentDescription: "Monthly invoice for January 2025",
     documentNumber: "DOC-2025-0001",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentStatus: "Pending",
     documentStage: "Submitted",
   },
@@ -44,7 +44,7 @@ export const documentList: DocumentListItem[] = [
     urgency: "Medium",
     documentType: "Contract",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentTitle: "Document 0002",
     documentDescription: "Employment contract for new hire",
     documentNumber: "DOC-2025-0002",
@@ -64,7 +64,7 @@ export const documentList: DocumentListItem[] = [
     documentDescription: "Quarterly IT infrastructure report",
     documentNumber: "DOC-2025-0003",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentStatus: "In Review",
     documentStage: "Under Review",
   },
@@ -81,7 +81,7 @@ export const documentList: DocumentListItem[] = [
     documentDescription: "Updated safety policy document",
     documentNumber: "DOC-2025-0004",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentStatus: "Pending",
     documentStage: "Awaiting Approval",
   },
@@ -98,7 +98,7 @@ export const documentList: DocumentListItem[] = [
     documentDescription: "Annual budget proposal for 2025",
     documentNumber: "DOC-2025-0005",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentStatus: "Approved",
     documentStage: "Completed",
   },
@@ -115,7 +115,7 @@ export const documentList: DocumentListItem[] = [
     documentDescription: "Vendor service agreement",
     documentNumber: "DOC-2025-0006",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentStatus: "Rejected",
     documentStage: "Rejected",
   },
@@ -132,7 +132,7 @@ export const documentList: DocumentListItem[] = [
     documentDescription: "Q1 marketing campaign proposal",
     documentNumber: "DOC-2025-0007",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentStatus: "In Review",
     documentStage: "Under Review",
   },
@@ -149,7 +149,7 @@ export const documentList: DocumentListItem[] = [
     documentDescription: "Client proposal for enterprise account",
     documentNumber: "DOC-2025-0008",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentStatus: "Pending",
     documentStage: "Submitted",
   },
@@ -166,7 +166,7 @@ export const documentList: DocumentListItem[] = [
     documentDescription: "Hardware procurement request",
     documentNumber: "DOC-2025-0009",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentStatus: "Approved",
     documentStage: "Completed",
   },
@@ -183,7 +183,7 @@ export const documentList: DocumentListItem[] = [
     documentDescription: "Remote work policy update",
     documentNumber: "DOC-2025-0010",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentStatus: "In Review",
     documentStage: "Under Review",
   },
@@ -200,7 +200,7 @@ export const documentList: DocumentListItem[] = [
     documentDescription: "Financial audit report",
     documentNumber: "DOC-2025-0011",
     documentUrl:
-      "./Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
+      "Briefing Session_Year-end Performance_Review-Send_to_Manager.pdf",
     documentStatus: "Pending",
     documentStage: "Awaiting Approval",
   },

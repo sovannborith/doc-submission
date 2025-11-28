@@ -401,7 +401,7 @@ export default function PendingApprovalTable() {
               <FunnelIcon className="h-4 w-4" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[400px] sm:w-[540px]">
+          <SheetContent side="right" className="w-[400px] sm:w-[540px] z-900">
             <SheetHeader>
               <SheetTitle>Filter Documents</SheetTitle>
             </SheetHeader>

@@ -24,7 +24,7 @@ export default function Notification() {
         <div className="mb-3 flex items-center justify-between">
           <p className="text-sm font-semibold">Modules Available</p>
         </div>
-        <div className="grid grid-cols-3 gap-3 ">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
           {allModules.map((module) => (
             <Link
               key={module.id}

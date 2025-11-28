@@ -319,7 +319,7 @@ export default function PendingApprovalDocumentDetails() {
                 {document.documentUrl && document.documentUrl.trim() ? (
                   <div className="flex items-center gap-2 flex-wrap">
                     <a
-                      href={document.documentUrl}
+                      href={`/document-submission/my-pending-approval/${document.id}/${document.documentUrl}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:underline text-sm break-all flex-1 min-w-0"

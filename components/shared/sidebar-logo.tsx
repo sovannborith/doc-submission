@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function SidebarLogo() {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex md:hidden items-center justify-center">
       <Link href="/">
         <Image src={logo} height={40} alt="Logo" className="object-contain" />
       </Link>
