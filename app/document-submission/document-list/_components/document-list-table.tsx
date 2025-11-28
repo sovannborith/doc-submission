@@ -15,6 +15,7 @@ import {
   ArrowLeft,
   CheckCircle2,
   RotateCcw,
+  Plus,
 } from "lucide-react";
 import {
   Table,
@@ -155,7 +156,7 @@ export default function DocumentListTable() {
         if (!doc.submitDate) return false;
         const docDate = new Date(doc.submitDate);
         docDate.setHours(0, 0, 0, 0); // Set to start of day for comparison
-        
+
         if (appliedFilters.startDate && appliedFilters.endDate) {
           // Both dates selected - filter between start and end
           const startDate = new Date(appliedFilters.startDate);
@@ -386,6 +387,7 @@ export default function DocumentListTable() {
           href="/document-submission/document-list/create"
           className={buttonVariants()}
         >
+          <Plus className=" h-4 w-4" />
           New Document
         </Link>
         <div className="flex items-center gap-2">
@@ -890,12 +892,12 @@ export default function DocumentListTable() {
                 paginatedDocuments.map((doc) => (
                   <TableRow key={doc.id} className="hover:bg-muted/50">
                     <TableCell>
-                    <Link
-                      href={`/document-submission/document-list/${doc.id}/details`}
-                      className="text-primary hover:underline font-medium"
-                    >
-                      {formatId(doc.id)}
-                    </Link>
+                      <Link
+                        href={`/document-submission/document-list/${doc.id}/details`}
+                        className="text-primary hover:underline font-medium"
+                      >
+                        {formatId(doc.id)}
+                      </Link>
                     </TableCell>
                     <TableCell>{doc.requestorName}</TableCell>
                     <TableCell>{doc.buFu}</TableCell>
